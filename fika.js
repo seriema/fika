@@ -73,3 +73,23 @@ document.fika.kalender = {
         21: { coffee: "Skumtomtar", name: "Skumtomtens dag" },
     }
 };
+
+document.fika.dessert = [
+    // types from https://sv.wikipedia.org/wiki/Dessert: pudding, glass, pannkaka, sufflé, frukt, choklad och bakverk
+
+    // Bakverk-types
+    // subtypes from https://sv.wikipedia.org/wiki/Bakverk : vetebröd, wienerbröd, mjuka kakor, muffins, rulltårta, mördeg, bakelser, tårtor
+    { coffee: "gräddtårta", type: "bakverk", subtype: "tårta", source: "https://sv.wikipedia.org/wiki/Gr%C3%A4ddt%C3%A5rta" },
+    { coffee: "hallongrottor", type: "bakverk", subtype: "mördeg", source: "https://sv.wikipedia.org/wiki/Hallongrotta" },
+    { coffee: "macarons", type: "bakverk", subtype: "mördeg", source: "https://sv.wikipedia.org/wiki/Makron_(bakverk)" },
+    { coffee: "ostkaka", type: "bakverk", subtype: "ostkaka", source: "https://sv.wikipedia.org/wiki/Ostkaka" },
+    { coffee: "prinsesstårta", type: "bakverk", subtype: "tårta", source: "https://sv.wikipedia.org/wiki/Prinsesst%C3%A5rta" },
+    { coffee: "schackrutor", type: "bakverk", subtype: "mördeg", source: "https://sv.wikipedia.org/wiki/Schackrutor_(bakverk)" },
+
+    // Pannkaka-types
+    { coffee: "saffranspannkaka", type: "pannkaka", type: "mördeg", source: "https://sv.wikipedia.org/wiki/Saffranspannkaka" },
+
+    // Misc
+    { coffee: "cheesecake", source: "https://sv.wikipedia.org/wiki/Cheesecake" },
+    { coffee: "maränger", source: "https://sv.wikipedia.org/wiki/Mar%C3%A4ng" },
+];
