@@ -6,8 +6,10 @@ document.fika = {
     // February
     1: {
         3: { coffee: "Morotskaka", name: "Morotskakans dag" },
+
+        // "Fettisdagen" and "Internationella pannkaksdagen" are both on the same day, and that day varies: the Tuesday after fasting Sunday
         // 25: { coffee: "Semla", name: "Fettisdagen" },  (mellan 3 februari och 9 mars infaller fettisdagen)
-        25: { coffee: "Pannkakor", name: "Internationella pannkaksdagen" },
+        // 25: { coffee: "Pannkakor", name: "Internationella pannkaksdagen" },
     },
     // March
     2: {
@@ -18,6 +20,7 @@ document.fika = {
     },
     // April
     3: {
+        // Licorice with coffee? :/
         // 12: { coffee: "Lakrits", name: "Lakritsdagen" },
     },
     // May
@@ -40,10 +43,13 @@ document.fika = {
     },
     // September
     8: {
+        // Coffee with coffee? :/
         // 29: { coffee: "Kaffe", name: "Kaffedagen" },
     },
     // October
     9: {
+        // Cannot handle multiple coffee's on the same day, so we picked cinnamon buns over cake
+        // 4: { coffee: "Gräddtårta", name: "Gräddtårtans dag", source: "http://www.lyckasmedbakning.nu/bak-fikakalender-2016/" },
         4: { coffee: "Kanelbulle", name: "Kanelbullens dag", source: "http://www.lyckasmedbakning.nu/bak-fikakalender-2016/" },
     },
     // November
