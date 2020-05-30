@@ -48,6 +48,7 @@ document.fika = {
     },
     // November
     10: {
+        6: { coffee: "Gustav Adolfsbakelse", name: "Gustav Adolfsdagen", source: "https://en.m.wikipedia.org/wiki/Gustavus_Adolphus_pastry" },
         7: { coffee: "Kladdkaka", name: "Kladdkakans dag", source: "http://www.lyckasmedbakning.nu/bak-fikakalender-2016/" },
         10: { coffee: "Äppelkaka", name: "Äppelkakans dag", source: "http://www.lyckasmedbakning.nu/bak-fikakalender-2016/" },
         11: { coffee: "Choklad", name: "Chokladens dag", source: "http://www.lyckasmedbakning.nu/bak-fikakalender-2016/" },
