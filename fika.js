@@ -20,6 +20,7 @@ document.fika = {
     },
     // April
     3: {
+        10: { coffee: "Bulle med bulle", name: "Bulle med bullens dag", source: "https://www.hd.se/2018-04-10/glom-inte-fira-bulle-med-bullens-dag/" },
         // Licorice with coffee? :/
         // 12: { coffee: "Lakrits", name: "Lakritsdagen" },
     },
