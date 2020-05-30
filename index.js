@@ -6,4 +6,4 @@ const fikaDate = document.fika[month][date];
 
 const $fika = document.getElementById("fika-node");
 
-$fika.innerText = fikaDate ? fikaDate.name : "precis vad du vill!"
+$fika.innerText = fikaDate ? fikaDate.coffee : "precis vad du vill!"
