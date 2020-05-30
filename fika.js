@@ -1,4 +1,6 @@
-document.fika = {
+document.fika = {};
+
+document.fika.kalender = {
     // January
     0: {
         10: { coffee: "Mazariner", name: "Mazarinens dag", source: "http://www.lyckasmedbakning.nu/bak-fikakalender-2016/" },
@@ -70,4 +72,4 @@ document.fika = {
         18: { coffee: "Valfri kaka", name: "Kakans dag", source: "http://www.lyckasmedbakning.nu/bak-fikakalender-2016/" },
         21: { coffee: "Skumtomtar", name: "Skumtomtens dag" },
     }
-}
+};

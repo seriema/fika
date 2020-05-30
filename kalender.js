@@ -1,6 +1,6 @@
 const today = new Date();
 
-const fika = document.fika;
+const fika = document.fika.kalender;
 const $fika = document.getElementById("fika-node");
 
 Object.keys(fika).forEach((month) => {
