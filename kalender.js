@@ -12,7 +12,7 @@ Object.keys(fika).forEach((month) => {
     const $dates = Object.keys(fika[month]).forEach((date) => {
         const fikaDate = fika[month][date];
         const $date = document.createElement("li");
-        $date.innerText = `${date}: ${fikaDate.coffee} (${fikaDate.name})`;
+        $date.innerHTML = `${date}: ${fikaDate.coffee} (<a href="${fikaDate.source}">${fikaDate.name}</a>)`;
         $month.appendChild($date);
     })
 
