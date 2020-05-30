@@ -17,8 +17,4 @@ Object.keys(fika).forEach((month) => {
     })
 
     $fika.appendChild($month)
-
 });
-
-
-// $fika.innerHTML =
