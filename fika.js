@@ -1,5 +1,6 @@
 document.fika = {};
 const nthDay = (month, nthDay, weekday) => nthDayInMonth(nthDay, weekday, month).getDate();
+const lastWeek = (month) => mondayOfLastFullWeekInMonth(month).getDate();
 
 // Tuesday after Fasting Sunday (47 days before Easter), can be in either February or March (earliest February 3 and latest March 9)
 const fatTuesday = daysFromEaster(-47);
@@ -57,8 +58,14 @@ document.fika.kalender = {
         // Coffee with coffee? :/
         // 29: { coffee: "Kaffe", name: "Kaffedagen" },
 
-        // Last week , a whole week
-        // 28: { coffee: "Prinsesstårta", name: "Prinsesstårtans vecka", source: "https://sv.wikipedia.org/wiki/Bakverk#Bakverk_vid_h%C3%B6gtider" },
+        // The whole last week of September is Princess cake day (crazy)
+        [lastWeek(8)+0]: { coffee: "Prinsesstårta", name: "Prinsesstårtans vecka", source: "https://sv.wikipedia.org/wiki/Bakverk#Bakverk_vid_h%C3%B6gtider" },
+        [lastWeek(8)+1]: { coffee: "Prinsesstårta", name: "Prinsesstårtans vecka", source: "https://sv.wikipedia.org/wiki/Bakverk#Bakverk_vid_h%C3%B6gtider" },
+        [lastWeek(8)+2]: { coffee: "Prinsesstårta", name: "Prinsesstårtans vecka", source: "https://sv.wikipedia.org/wiki/Bakverk#Bakverk_vid_h%C3%B6gtider" },
+        [lastWeek(8)+3]: { coffee: "Prinsesstårta", name: "Prinsesstårtans vecka", source: "https://sv.wikipedia.org/wiki/Bakverk#Bakverk_vid_h%C3%B6gtider" },
+        [lastWeek(8)+4]: { coffee: "Prinsesstårta", name: "Prinsesstårtans vecka", source: "https://sv.wikipedia.org/wiki/Bakverk#Bakverk_vid_h%C3%B6gtider" },
+        [lastWeek(8)+5]: { coffee: "Prinsesstårta", name: "Prinsesstårtans vecka", source: "https://sv.wikipedia.org/wiki/Bakverk#Bakverk_vid_h%C3%B6gtider" },
+        [lastWeek(8)+6]: { coffee: "Prinsesstårta", name: "Prinsesstårtans vecka", source: "https://sv.wikipedia.org/wiki/Bakverk#Bakverk_vid_h%C3%B6gtider" },
     },
     // October
     9: {
@@ -102,13 +109,25 @@ document.fika.kalender[fatTuesday.getMonth()][fatTuesday.getDate()] = { coffee: 
 
 // Helper methods from https://www.i-programmer.info/programming/javascript/6322-date-hacks-doing-javascript-date-calculations.html?start=1
 // `day` is in the range 0 Sunday to 6 Saturday
-function firstDayInMonth (day, m, y) {
+function firstDayInMonth(day, m, y) {
     return new Date(y, m, 1 + (day - new Date(y, m, 1).getDay() + 7) % 7);
 }
-function nthDayInMonth (n, day, m) {
+function nthDayInMonth(n, day, m) {
     const y = new Date(Date.now()).getFullYear();
     const d = firstDayInMonth(day, m, y);
     return new Date(d.getFullYear(), d.getMonth(), d.getDate() + (n - 1) * 7);
+}
+
+function lastDayInMonth(day, m) {
+    const y = new Date(Date.now()).getFullYear();
+    const d = firstDayInMonth(day, m + 1, y);
+    d.setDate(d.getDate() - 7);
+    return d;
+}
+function mondayOfLastFullWeekInMonth(m) {
+    const d = lastDayInMonth(0, m);
+    d.setDate(d.getDate() - 6);
+    return d;
 }
 
 // https://stackoverflow.com/a/1284335/703921
