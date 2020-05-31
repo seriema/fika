@@ -16,13 +16,12 @@ if (fikaDate) {
     fetch(wikimediaUrl, { mode: 'cors' })
         .then(response => response.json())
         .then(data => {
-            if (data.query.pages[-1]) {
-                // Something went wrong
+            const pageKeys = Object.keys(data.query.pages);
+            const page = data.query.pages[pageKeys[0]];
+            if (!page.thumbnail || !page.thumbnail.source) {
                 return;
             }
-            const pageKeys = Object.keys(data.query.pages);
-            const imageUrl = data.query.pages[pageKeys[0]].thumbnail.source;
-            $fika.innerHTML += `<img src="${imageUrl}" />`
+            $fika.innerHTML += `<img src="${page.thumbnail.source}" />`
         });
 }
 // Or fall back
