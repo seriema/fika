@@ -8,6 +8,7 @@ document.fika.kalender = {
     // January
     0: {
         10: { coffee: "Mazariner", name: "Mazarinens dag", source: "http://www.lyckasmedbakning.nu/bak-fikakalender-2016/" },
+        30: { coffee: "Croissanter", name: "Croissantens dag", source: "https://www.helenholmberg.se/2014/08/mathogtider/" },
     },
     // February
     1: {
@@ -62,6 +63,7 @@ document.fika.kalender = {
     // October
     9: {
         4: { coffee: "Kanelbulle", name: "Kanelbullens dag", source: "http://www.lyckasmedbakning.nu/bak-fikakalender-2016/" },
+        18: { coffee: "Chokladmuffins", name: "Chokladmuffinsdagen", source: "https://www.helenholmberg.se/2014/08/mathogtider/" },
         20: { coffee: "Finska pinnar", name: "Finska pinnens dag", source: "https://sv.wikipedia.org/wiki/Bakverk#Bakverk_vid_h%C3%B6gtider" },
         24: { coffee: "FN-bakelse", name: "FN-dagen", source: "https://sv.wikipedia.org/wiki/Bakverk#Bakverk_vid_h%C3%B6gtider" },
 
