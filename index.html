@@ -6,15 +6,6 @@
         <title>Fika time! It's always 15:00 somewhere in the world :)</title>
         <meta name="description" content="Fika is a sacred ritual performed in Sweden at 15:00. It's always a coffee with something, and most days that something is something special.">
 
-        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-1324222-10"></script>
-        <script>
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-
-            gtag('config', 'UA-1324222-10');
-        </script>
-
         <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto+Slab">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/milligram/1.3.0/milligram.min.css" integrity="sha256-Ro/wP8uUi8LR71kwIdilf78atpu8bTEwrK5ZotZo+Zc=" crossorigin="anonymous" />
     </head>
@@ -22,12 +13,21 @@
     <body>
         <div class="container" style="text-align: center;">
             <h1>Fikadags!</h1>
-            <h2>Idag ska du ha kaffe med</h2>
-            <h3 id="fika-node"></h3>
+            <h2 id="fika-date-node">Idag ska du ha kaffe med</h2>
+            <h3 id="fika-coffee-node"></h3>
             <p><a href="kalender.html">Se alla dagar.</a></p>
             <p><em>Har vi missat en dag? <a href="https://github.com/seriema/fika/edit/master/fika.js">Lägg till den här.</a></em></p>
         </div>
         <script src="fika.js"></script>
         <script src="index.js"></script>
+        <!-- Google Analytics at the bottom because it slows down the site locally -->
+        <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=UA-1324222-10"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'UA-1324222-10');
+        </script> -->
     </body>
 </html>
