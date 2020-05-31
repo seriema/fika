@@ -34,9 +34,6 @@ document.fika.kalender = {
         11: { coffee: "Chokladbollar", name: "Chokladbollens dag", source: "http://www.lyckasmedbakning.nu/bak-fikakalender-2016/" },
         15: { coffee: "Kardemummabulle", name: "Kardemummabullens dag", source: "http://www.lyckasmedbakning.nu/bak-fikakalender-2016/" },
         27: { coffee: "Muffins", name: "Muffinsdagen", source: "http://www.lyckasmedbakning.nu/bak-fikakalender-2016/" }
-
-        // Second Tuesday in May
-        // 13: { coffee: "Syltkaka", name: "Syltkakans dag", source: "https://sv.wikipedia.org/wiki/Bakverk#Bakverk_vid_h%C3%B6gtider" },
     },
     // June
     5: {
@@ -60,14 +57,9 @@ document.fika.kalender = {
     },
     // October
     9: {
-        // Cannot handle multiple coffee's on the same day, so we picked cinnamon buns over cake
-        // 4: { coffee: "Gräddtårta", name: "Gräddtårtans dag", source: "http://www.lyckasmedbakning.nu/bak-fikakalender-2016/" },
         4: { coffee: "Kanelbulle", name: "Kanelbullens dag", source: "http://www.lyckasmedbakning.nu/bak-fikakalender-2016/" },
         20: { coffee: "Finska pinnar", name: "Finska pinnens dag", source: "https://sv.wikipedia.org/wiki/Bakverk#Bakverk_vid_h%C3%B6gtider" },
         24: { coffee: "FN-bakelse", name: "FN-dagen", source: "https://sv.wikipedia.org/wiki/Bakverk#Bakverk_vid_h%C3%B6gtider" },
-
-        // First Sunday in October
-        // 28: { coffee: "Gräddtårta", name: "Gräddtårtans dag", source: "https://sv.wikipedia.org/wiki/Bakverk#Bakverk_vid_h%C3%B6gtider" },
     },
     // November
     10: {
@@ -91,3 +83,27 @@ document.fika.kalender = {
         21: { coffee: "Skumtomtar", name: "Skumtomtens dag" },
     }
 };
+
+(function () {
+    // Helper methods from https://www.i-programmer.info/programming/javascript/6322-date-hacks-doing-javascript-date-calculations.html?start=1
+    // `day` is in the range 0 Sunday to 6 Saturday
+    const firstDayInMonth = (day, m, y) => {
+        return new Date(y, m, 1 + (day - new Date(y, m, 1).getDay() + 7) % 7);
+    };
+    const nthDayInMonth = (n, day, m) => {
+        const y = new Date(Date.now()).getFullYear();
+        const d = firstDayInMonth(day, m, y);
+        return new Date(d.getFullYear(), d.getMonth(), d.getDate() + (n - 1) * 7);
+    };
+
+    const specialDate = (nthDay, weekday, month, fikaObject) => {
+        const date = nthDayInMonth(nthDay, weekday, month).getDate();
+        document.fika.kalender[month][date] = fikaObject;
+    };
+
+    // Second Tuesday in May is Syltkakans dag
+    specialDate(2, 2, 4, { coffee: "Syltkaka", name: "Syltkakans dag", source: "https://sv.wikipedia.org/wiki/Bakverk#Bakverk_vid_h%C3%B6gtider" });
+
+    // First Sunday in October
+    specialDate(1, 0, 9, { coffee: "Gräddtårta", name: "Gräddtårtans dag", source: "https://sv.wikipedia.org/wiki/Bakverk#Bakverk_vid_h%C3%B6gtider" });
+})();
