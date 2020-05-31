@@ -1,6 +1,9 @@
 document.fika = {};
 const nthDay = (month, nthDay, weekday) => nthDayInMonth(nthDay, weekday, month).getDate();
 
+// Tuesday after Fasting Sunday (47 days before Easter), can be in either February or March (earliest February 3 and latest March 9)
+const fatTuesday = daysFromEaster(-47);
+
 document.fika.kalender = {
     // January
     0: {
@@ -10,11 +13,8 @@ document.fika.kalender = {
     1: {
         3: { coffee: "Morotskaka", name: "Morotskakans dag" },
         5: { coffee: "Runebergstårta", name: "Runebergsdagen", source: "https://sv.wikipedia.org/wiki/Runebergsdagen" },
-
-        // "Fettisdagen" and "Internationella pannkaksdagen" are both on the same day, and that day varies: the Tuesday after fasting Sunday
-        // 25: { coffee: "Semla", name: "Fettisdagen" },  (mellan 3 februari och 9 mars infaller fettisdagen)
-        // 25: { coffee: "Pannkakor", name: "Internationella pannkaksdagen" },
     },
+    // Fat Tuesday can happen in February or March, so it has to be set after the kalender object
     // March
     2: {
         3: { coffee: "Mandelkubbar", name: "Mandelkubbens dag", source: "http://www.lyckasmedbakning.nu/bak-fikakalender-2016/" },
@@ -91,7 +91,13 @@ document.fika.kalender = {
     }
 };
 
+// "Fettisdagen" and "Internationella pannkaksdagen" are both on the same day, and that day varies:
+document.fika.kalender[fatTuesday.getMonth()][fatTuesday.getDate()] = { coffee: "Semla", name: "Fettisdagen", source: "https://sv.wikipedia.org/wiki/Fettisdagen" };
+// { coffee: "Pannkakor", name: "Internationella pannkaksdagen" },
+
+//
 // Abuse hoisting so this file is easier to contribute to by keeping the calendar at the top :)
+
 // Helper methods from https://www.i-programmer.info/programming/javascript/6322-date-hacks-doing-javascript-date-calculations.html?start=1
 // `day` is in the range 0 Sunday to 6 Saturday
 function firstDayInMonth (day, m, y) {
@@ -101,4 +107,25 @@ function nthDayInMonth (n, day, m) {
     const y = new Date(Date.now()).getFullYear();
     const d = firstDayInMonth(day, m, y);
     return new Date(d.getFullYear(), d.getMonth(), d.getDate() + (n - 1) * 7);
+}
+
+// https://stackoverflow.com/a/1284335/703921
+function easter() {
+    const Y = new Date(Date.now()).getFullYear();
+    const C = Math.floor(Y/100);
+    const N = Y - 19*Math.floor(Y/19);
+    const K = Math.floor((C - 17)/25);
+    let I = C - Math.floor(C/4) - Math.floor((C - K)/3) + 19*N + 15;
+    I = I - 30*Math.floor((I/30));
+    I = I - Math.floor(I/28)*(1 - Math.floor(I/28)*Math.floor(29/(I + 1))*Math.floor((21 - N)/11));
+    let J = Y + Math.floor(Y/4) + I + 2 - C + Math.floor(C/4);
+    J = J - 7*Math.floor(J/7);
+    const L = I - J;
+    const M = 3 + Math.floor((L + 40)/44);
+    const D = L + 28 - 31*Math.floor(M/4);
+
+    return new Date(Y, M-1, D);
+}
+function daysFromEaster(daysDiff) {
+    return new Date(easter().setDate(easter().getDate() + daysDiff));
 }
