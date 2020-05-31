@@ -1,4 +1,5 @@
 document.fika = {};
+document.fika.year = getYear();
 const nthDay = (month, nthDay, weekday) => nthDayInMonth(nthDay, weekday, month).getDate();
 const lastWeek = (month) => mondayOfLastFullWeekInMonth(month).getDate();
 
@@ -107,10 +108,19 @@ document.fika.kalender[fatTuesday.getMonth()][fatTuesday.getDate()] = { coffee: 
 //
 // Abuse hoisting so this file is easier to contribute to by keeping the calendar at the top :)
 
+function getYear() {
+    if (window.location.search) {
+        const searchParams = new URLSearchParams(window.location.search);
+        const yearString = searchParams.get("year");
+        return Number(yearString);
+    }
+
+    return new Date(Date.now()).getFullYear();
+}
+
 // Helper methods from https://www.i-programmer.info/programming/javascript/6322-date-hacks-doing-javascript-date-calculations.html?start=1
 // `day` is in the range 0 Sunday to 6 Saturday
-function firstDayInMonth(day, m) {
-    const y = new Date(Date.now()).getFullYear();
+function firstDayInMonth(day, m, y = document.fika.year) {
     return new Date(y, m, 1 + (day - new Date(y, m, 1).getDay() + 7) % 7);
 }
 function nthDayInMonth(n, day, m) {
@@ -130,8 +140,7 @@ function mondayOfLastFullWeekInMonth(m) {
 }
 
 // https://stackoverflow.com/a/1284335/703921
-function easter() {
-    const Y = new Date(Date.now()).getFullYear();
+function easter(Y = document.fika.year) {
     const C = Math.floor(Y/100);
     const N = Y - 19*Math.floor(Y/19);
     const K = Math.floor((C - 17)/25);
