@@ -109,18 +109,17 @@ document.fika.kalender[fatTuesday.getMonth()][fatTuesday.getDate()] = { coffee: 
 
 // Helper methods from https://www.i-programmer.info/programming/javascript/6322-date-hacks-doing-javascript-date-calculations.html?start=1
 // `day` is in the range 0 Sunday to 6 Saturday
-function firstDayInMonth(day, m, y) {
+function firstDayInMonth(day, m) {
+    const y = new Date(Date.now()).getFullYear();
     return new Date(y, m, 1 + (day - new Date(y, m, 1).getDay() + 7) % 7);
 }
 function nthDayInMonth(n, day, m) {
-    const y = new Date(Date.now()).getFullYear();
-    const d = firstDayInMonth(day, m, y);
+    const d = firstDayInMonth(day, m);
     return new Date(d.getFullYear(), d.getMonth(), d.getDate() + (n - 1) * 7);
 }
 
 function lastDayInMonth(day, m) {
-    const y = new Date(Date.now()).getFullYear();
-    const d = firstDayInMonth(day, m + 1, y);
+    const d = firstDayInMonth(day, m + 1);
     d.setDate(d.getDate() - 7);
     return d;
 }
