@@ -9,101 +9,104 @@ const fatTuesday = daysFromEaster(-47);
 document.fika.kalender = {
     // January
     0: {
-        10: { coffee: "Mazariner", name: "Mazarinens dag", source: "http://www.lyckasmedbakning.nu/bak-fikakalender-2016/" },
-        30: { coffee: "Croissanter", name: "Croissantens dag", source: "https://www.helenholmberg.se/2014/08/mathogtider/" },
+        10: [{ coffee: "Mazariner", name: "Mazarinens dag", source: "http://www.lyckasmedbakning.nu/bak-fikakalender-2016/" }],
+        30: [{ coffee: "Croissanter", name: "Croissantens dag", source: "https://www.helenholmberg.se/2014/08/mathogtider/" }],
     },
     // February
     1: {
-        3: { coffee: "Morotskaka", name: "Morotskakans dag" },
-        5: { coffee: "Runebergstårta", name: "Runebergsdagen", source: "https://sv.wikipedia.org/wiki/Runebergsdagen" },
+        3: [{ coffee: "Morotskaka", name: "Morotskakans dag" }],
+        5: [{ coffee: "Runebergstårta", name: "Runebergsdagen", source: "https://sv.wikipedia.org/wiki/Runebergsdagen" }],
     },
     // Fat Tuesday can happen in February or March, so it has to be set after the kalender object
     // March
     2: {
-        3: { coffee: "Mandelkubbar", name: "Mandelkubbens dag", source: "http://www.lyckasmedbakning.nu/bak-fikakalender-2016/" },
-        7: { coffee: "Punchrullar", name: "Punchrullens dag", source: "http://www.lyckasmedbakning.nu/bak-fikakalender-2016/" },
-        13: { coffee: "Mazariner", name: "Mazarinens dag (igen)", source: "http://www.lyckasmedbakning.nu/bak-fikakalender-2016/" },
-        15: { coffee: "Polhemsbakelse", name: "Kristofferdagen", source: "https://sv.wikipedia.org/wiki/Bakverk#Bakverk_vid_h%C3%B6gtider" },
-        25: { coffee: "Våfflor", name: "Vårfrudagen", source: "http://www.lyckasmedbakning.nu/bak-fikakalender-2016/" },
+        3: [{ coffee: "Mandelkubbar", name: "Mandelkubbens dag", source: "http://www.lyckasmedbakning.nu/bak-fikakalender-2016/" }],
+        7: [{ coffee: "Punchrullar", name: "Punchrullens dag", source: "http://www.lyckasmedbakning.nu/bak-fikakalender-2016/" }],
+        13: [{ coffee: "Mazariner", name: "Mazarinens dag (igen)", source: "http://www.lyckasmedbakning.nu/bak-fikakalender-2016/" }],
+        15: [{ coffee: "Polhemsbakelse", name: "Kristofferdagen", source: "https://sv.wikipedia.org/wiki/Bakverk#Bakverk_vid_h%C3%B6gtider" }],
+        25: [{ coffee: "Våfflor", name: "Vårfrudagen", source: "http://www.lyckasmedbakning.nu/bak-fikakalender-2016/" }],
     },
     // April
     3: {
-        10: { coffee: "Bulle med bulle", name: "Bulle med bullens dag", source: "https://www.hd.se/2018-04-10/glom-inte-fira-bulle-med-bullens-dag/" },
+        10: [{ coffee: "Bulle med bulle", name: "Bulle med bullens dag", source: "https://www.hd.se/2018-04-10/glom-inte-fira-bulle-med-bullens-dag/" }],
         // Licorice with coffee? :/
-        // 12: { coffee: "Lakrits", name: "Lakritsdagen" },
+        // 12: [{ coffee: "Lakrits", name: "Lakritsdagen" }],
     },
     // May
     4: {
-        1: { coffee: "Budapestbakelse", name: "Budapestbakelsens dag", source: "http://www.lyckasmedbakning.nu/bak-fikakalender-2016/" },
-        11: { coffee: "Chokladbollar", name: "Chokladbollens dag", source: "http://www.lyckasmedbakning.nu/bak-fikakalender-2016/" },
-        15: { coffee: "Kardemummabulle", name: "Kardemummabullens dag", source: "http://www.lyckasmedbakning.nu/bak-fikakalender-2016/" },
-        27: { coffee: "Muffins", name: "Muffinsdagen", source: "http://www.lyckasmedbakning.nu/bak-fikakalender-2016/" },
+        1: [{ coffee: "Budapestbakelse", name: "Budapestbakelsens dag", source: "http://www.lyckasmedbakning.nu/bak-fikakalender-2016/" }],
+        11: [{ coffee: "Chokladbollar", name: "Chokladbollens dag", source: "http://www.lyckasmedbakning.nu/bak-fikakalender-2016/" }],
+        15: [{ coffee: "Kardemummabulle", name: "Kardemummabullens dag", source: "http://www.lyckasmedbakning.nu/bak-fikakalender-2016/" }],
+        27: [{ coffee: "Muffins", name: "Muffinsdagen", source: "http://www.lyckasmedbakning.nu/bak-fikakalender-2016/" }],
 
         // May's Second Tuesday is Syltkakans dag
-        [nthDay(4, 2, 2)]: { coffee: "Syltkaka", name: "Syltkakans dag", source: "https://sv.wikipedia.org/wiki/Bakverk#Bakverk_vid_h%C3%B6gtider" },
+        [nthDay(4, 2, 2)]: [{ coffee: "Syltkaka", name: "Syltkakans dag", source: "https://sv.wikipedia.org/wiki/Bakverk#Bakverk_vid_h%C3%B6gtider" }],
     },
     // June
     5: {
-        6: { coffee: "Nationaldagsbakelse", name: "Nationaldagen", source: "https://sv.wikipedia.org/wiki/Bakverk#Bakverk_vid_h%C3%B6gtider" },
-        26: { coffee: "Chokladpudding", name: "Chokladpuddingens dag" },
+        6: [{ coffee: "Nationaldagsbakelse", name: "Nationaldagen", source: "https://sv.wikipedia.org/wiki/Bakverk#Bakverk_vid_h%C3%B6gtider" }],
+        26: [{ coffee: "Chokladpudding", name: "Chokladpuddingens dag" }],
     },
     // July
     6: {
     },
     // August
     7: {
-        9: { coffee: "Rulltårta", name: "Rulltårtans dag", source: "http://www.lyckasmedbakning.nu/bak-fikakalender-2016/" },
+        9: [{ coffee: "Rulltårta", name: "Rulltårtans dag", source: "http://www.lyckasmedbakning.nu/bak-fikakalender-2016/" }],
     },
     // September
     8: {
         // Coffee with coffee? :/
-        // 29: { coffee: "Kaffe", name: "Kaffedagen" },
+        // 29: [{ coffee: "Kaffe", name: "Kaffedagen" }],
 
         // The whole last week of September is Princess cake day (crazy)
-        [lastWeek(8)+0]: { coffee: "Prinsesstårta", name: "Prinsesstårtans vecka", source: "https://sv.wikipedia.org/wiki/Bakverk#Bakverk_vid_h%C3%B6gtider" },
-        [lastWeek(8)+1]: { coffee: "Prinsesstårta", name: "Prinsesstårtans vecka", source: "https://sv.wikipedia.org/wiki/Bakverk#Bakverk_vid_h%C3%B6gtider" },
-        [lastWeek(8)+2]: { coffee: "Prinsesstårta", name: "Prinsesstårtans vecka", source: "https://sv.wikipedia.org/wiki/Bakverk#Bakverk_vid_h%C3%B6gtider" },
-        [lastWeek(8)+3]: { coffee: "Prinsesstårta", name: "Prinsesstårtans vecka", source: "https://sv.wikipedia.org/wiki/Bakverk#Bakverk_vid_h%C3%B6gtider" },
-        [lastWeek(8)+4]: { coffee: "Prinsesstårta", name: "Prinsesstårtans vecka", source: "https://sv.wikipedia.org/wiki/Bakverk#Bakverk_vid_h%C3%B6gtider" },
-        [lastWeek(8)+5]: { coffee: "Prinsesstårta", name: "Prinsesstårtans vecka", source: "https://sv.wikipedia.org/wiki/Bakverk#Bakverk_vid_h%C3%B6gtider" },
-        [lastWeek(8)+6]: { coffee: "Prinsesstårta", name: "Prinsesstårtans vecka", source: "https://sv.wikipedia.org/wiki/Bakverk#Bakverk_vid_h%C3%B6gtider" },
+        [lastWeek(8)+0]: [{ coffee: "Prinsesstårta", name: "Prinsesstårtans vecka", source: "https://sv.wikipedia.org/wiki/Bakverk#Bakverk_vid_h%C3%B6gtider" }],
+        [lastWeek(8)+1]: [{ coffee: "Prinsesstårta", name: "Prinsesstårtans vecka", source: "https://sv.wikipedia.org/wiki/Bakverk#Bakverk_vid_h%C3%B6gtider" }],
+        [lastWeek(8)+2]: [{ coffee: "Prinsesstårta", name: "Prinsesstårtans vecka", source: "https://sv.wikipedia.org/wiki/Bakverk#Bakverk_vid_h%C3%B6gtider" }],
+        [lastWeek(8)+3]: [{ coffee: "Prinsesstårta", name: "Prinsesstårtans vecka", source: "https://sv.wikipedia.org/wiki/Bakverk#Bakverk_vid_h%C3%B6gtider" }],
+        [lastWeek(8)+4]: [{ coffee: "Prinsesstårta", name: "Prinsesstårtans vecka", source: "https://sv.wikipedia.org/wiki/Bakverk#Bakverk_vid_h%C3%B6gtider" }],
+        [lastWeek(8)+5]: [{ coffee: "Prinsesstårta", name: "Prinsesstårtans vecka", source: "https://sv.wikipedia.org/wiki/Bakverk#Bakverk_vid_h%C3%B6gtider" }],
+        [lastWeek(8)+6]: [{ coffee: "Prinsesstårta", name: "Prinsesstårtans vecka", source: "https://sv.wikipedia.org/wiki/Bakverk#Bakverk_vid_h%C3%B6gtider" }],
     },
     // October
     9: {
-        4: { coffee: "Kanelbulle", name: "Kanelbullens dag", source: "http://www.lyckasmedbakning.nu/bak-fikakalender-2016/" },
-        18: { coffee: "Chokladmuffins", name: "Chokladmuffinsdagen", source: "https://www.helenholmberg.se/2014/08/mathogtider/" },
-        20: { coffee: "Finska pinnar", name: "Finska pinnens dag", source: "https://sv.wikipedia.org/wiki/Bakverk#Bakverk_vid_h%C3%B6gtider" },
-        24: { coffee: "FN-bakelse", name: "FN-dagen", source: "https://sv.wikipedia.org/wiki/Bakverk#Bakverk_vid_h%C3%B6gtider" },
+        4: [{ coffee: "Kanelbulle", name: "Kanelbullens dag", source: "http://www.lyckasmedbakning.nu/bak-fikakalender-2016/" }],
+        18: [{ coffee: "Chokladmuffins", name: "Chokladmuffinsdagen", source: "https://www.helenholmberg.se/2014/08/mathogtider/" }],
+        20: [{ coffee: "Finska pinnar", name: "Finska pinnens dag", source: "https://sv.wikipedia.org/wiki/Bakverk#Bakverk_vid_h%C3%B6gtider" }],
+        24: [{ coffee: "FN-bakelse", name: "FN-dagen", source: "https://sv.wikipedia.org/wiki/Bakverk#Bakverk_vid_h%C3%B6gtider" }],
 
         // October's First Sunday is Gräddtårtans dag
-        [nthDay(9, 1, 0)]: { coffee: "Gräddtårta", name: "Gräddtårtans dag", source: "https://sv.wikipedia.org/wiki/Bakverk#Bakverk_vid_h%C3%B6gtider" },
+        [nthDay(9, 1, 0)]: [{ coffee: "Gräddtårta", name: "Gräddtårtans dag", source: "https://sv.wikipedia.org/wiki/Bakverk#Bakverk_vid_h%C3%B6gtider" }],
     },
     // November
     10: {
-        6: { coffee: "Gustav Adolfsbakelse", name: "Gustav Adolfsdagen", source: "https://en.wikipedia.org/wiki/Gustavus_Adolphus_pastry" },
-        7: { coffee: "Kladdkaka", name: "Kladdkakans dag", source: "http://www.lyckasmedbakning.nu/bak-fikakalender-2016/" },
+        6: [{ coffee: "Gustav Adolfsbakelse", name: "Gustav Adolfsdagen", source: "https://en.wikipedia.org/wiki/Gustavus_Adolphus_pastry" }],
+        7: [{ coffee: "Kladdkaka", name: "Kladdkakans dag", source: "http://www.lyckasmedbakning.nu/bak-fikakalender-2016/" }],
         // Cannot handle multiple coffee's on the same day, so we picked regular appel cake over Skånsk appel kake
-        // 10: { coffee: "Skånsk äppelkaka", name: "Mårtensafton", source: "https://sv.wikipedia.org/wiki/Bakverk#Bakverk_vid_h%C3%B6gtider" },
-        10: { coffee: "Äppelkaka", name: "Äppelkakans dag", source: "http://www.lyckasmedbakning.nu/bak-fikakalender-2016/" },
-        11: { coffee: "Choklad", name: "Chokladens dag", source: "http://www.lyckasmedbakning.nu/bak-fikakalender-2016/" },
+        // 10: [{ coffee: "Skånsk äppelkaka", name: "Mårtensafton", source: "https://sv.wikipedia.org/wiki/Bakverk#Bakverk_vid_h%C3%B6gtider" }],
+        10: [{ coffee: "Äppelkaka", name: "Äppelkakans dag", source: "http://www.lyckasmedbakning.nu/bak-fikakalender-2016/" }],
+        11: [{ coffee: "Choklad", name: "Chokladens dag", source: "http://www.lyckasmedbakning.nu/bak-fikakalender-2016/" }],
         // We prefer sweets with our coffee, and Smörgåstårta is salty
-        // 13: { coffee: "Smörgåstårta", name: "Smörgåstårtans dag", source: "https://sv.wikipedia.org/wiki/Bakverk#Bakverk_vid_h%C3%B6gtider" },
-        14: { coffee: "Ostkaka", name: "Ostkakans dag", source: "http://www.lyckasmedbakning.nu/bak-fikakalender-2016/" },
-        17: { coffee: "Napoleonbakelse", name: "Napoleonbakelsens dag", source: "http://www.lyckasmedbakning.nu/bak-fikakalender-2016/" },
-        22: { coffee: "Wienerbröd", name: "Wienderbrödets dag", source: "http://www.lyckasmedbakning.nu/bak-fikakalender-2016/" },
+        // 13: [{ coffee: "Smörgåstårta", name: "Smörgåstårtans dag", source: "https://sv.wikipedia.org/wiki/Bakverk#Bakverk_vid_h%C3%B6gtider" }],
+        14: [{ coffee: "Ostkaka", name: "Ostkakans dag", source: "http://www.lyckasmedbakning.nu/bak-fikakalender-2016/" }],
+        17: [{ coffee: "Napoleonbakelse", name: "Napoleonbakelsens dag", source: "http://www.lyckasmedbakning.nu/bak-fikakalender-2016/" }],
+        22: [{ coffee: "Wienerbröd", name: "Wienderbrödets dag", source: "http://www.lyckasmedbakning.nu/bak-fikakalender-2016/" }],
     },
     // December
     11: {
-        9: { coffee: "Pepparkakor", name: "Pepparkakans dag", source: "https://temadagar.se/pepparkakans-dag/" },
-        13: { coffee: "Lussebullar och pepparkakor", name: "Lucia", source: "http://www.lyckasmedbakning.nu/bak-fikakalender-2016/" },
-        18: { coffee: "Valfri kaka", name: "Kakans dag", source: "http://www.lyckasmedbakning.nu/bak-fikakalender-2016/" },
-        21: { coffee: "Skumtomtar", name: "Skumtomtens dag" },
+        9: [{ coffee: "Pepparkakor", name: "Pepparkakans dag", source: "https://temadagar.se/pepparkakans-dag/" }],
+        13: [{ coffee: "Lussebullar och pepparkakor", name: "Lucia", source: "http://www.lyckasmedbakning.nu/bak-fikakalender-2016/" }],
+        18: [{ coffee: "Valfri kaka", name: "Kakans dag", source: "http://www.lyckasmedbakning.nu/bak-fikakalender-2016/" }],
+        21: [{ coffee: "Skumtomtar", name: "Skumtomtens dag" }],
     }
 };
 
-// "Fettisdagen" and "Internationella pannkaksdagen" are both on the same day, and that day varies:
-document.fika.kalender[fatTuesday.getMonth()][fatTuesday.getDate()] = { coffee: "Semla", name: "Fettisdagen", source: "https://sv.wikipedia.org/wiki/Fettisdagen" };
-// { coffee: "Pannkakor", name: "Internationella pannkaksdagen" },
+// "Fettisdagen" and "Internationella pannkaksdagen" are both on the same day, and that day varies
+document.fika.kalender[fatTuesday.getMonth()][fatTuesday.getDate()] ?
+    document.fika.kalender[fatTuesday.getMonth()][fatTuesday.getDate()].push({ coffee: "Semla", name: "Fettisdagen", source: "https://sv.wikipedia.org/wiki/Fettisdagen" }) :
+    document.fika.kalender[fatTuesday.getMonth()][fatTuesday.getDate()] = [{ coffee: "Semla", name: "Fettisdagen", source: "https://sv.wikipedia.org/wiki/Fettisdagen" }];
+
+// [{ coffee: "Pannkakor", name: "Internationella pannkaksdagen" }],
 
 //
 // Abuse hoisting so this file is easier to contribute to by keeping the calendar at the top :)

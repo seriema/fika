@@ -8,11 +8,12 @@ const $fika = document.getElementById("fika-node");
 
 // Celebrate a special day
 if (fikaDate) {
-    $fika.innerHTML = `<h3>${fikaDate.coffee}</h3>`;
+    const fika = fikaDate[0];
+    $fika.innerHTML = `<h3>${fika.coffee}</h3>`;
 
     // Try to get a picture of the pastry :)
     const imageHeight = 300;
-    const wikimediaUrl = `https://sv.wikipedia.org/w/api.php?origin=*&action=query&titles=${fikaDate.coffee}&prop=pageimages&format=json&pithumbsize=${imageHeight}`;
+    const wikimediaUrl = `https://sv.wikipedia.org/w/api.php?origin=*&action=query&titles=${fika.coffee}&prop=pageimages&format=json&pithumbsize=${imageHeight}`;
     fetch(wikimediaUrl, { mode: 'cors' })
         .then(response => response.json())
         .then(data => {
@@ -23,7 +24,7 @@ if (fikaDate) {
             }
             return $fika;
         })
-        .then($f => $f.innerHTML += `<p>för det är <strong><a href="${fikaDate.source}">${fikaDate.name}</a></strong>!</p>`);
+        .then($f => $f.innerHTML += `<p>för det är <strong><a href="${fika.source}">${fika.name}</a></strong>!</p>`);
 }
 // Or fall back
 else {
