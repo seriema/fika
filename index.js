@@ -8,7 +8,7 @@ const $fika = document.getElementById("fika-node");
 
 // Celebrate a special day
 if (fikaDate) {
-    $fika.innerHTML = `<h3>${fikaDate.coffee}</h3> <p>för det är <strong><a href="${fikaDate.source}">${fikaDate.name}</a></strong>!</p>`;
+    $fika.innerHTML = `<h3>${fikaDate.coffee}</h3>`;
 
     // Try to get a picture of the pastry :)
     const imageHeight = 300;
@@ -18,11 +18,12 @@ if (fikaDate) {
         .then(data => {
             const pageKeys = Object.keys(data.query.pages);
             const page = data.query.pages[pageKeys[0]];
-            if (!page.thumbnail || !page.thumbnail.source) {
-                return;
+            if (page.thumbnail && page.thumbnail.source) {
+                $fika.innerHTML += `<img src="${page.thumbnail.source}" />`
             }
-            $fika.innerHTML += `<img src="${page.thumbnail.source}" />`
-        });
+            return $fika;
+        })
+        .then($f => $f.innerHTML += `<p>för det är <strong><a href="${fikaDate.source}">${fikaDate.name}</a></strong>!</p>`);
 }
 // Or fall back
 else {
