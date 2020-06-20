@@ -98,7 +98,7 @@ document.fika.kalender = {
     11: {
         9: [{ coffee: "Pepparkakor", name: "Pepparkakans dag", source: "https://temadagar.se/pepparkakans-dag/" }],
         13: [{ coffee: "Lussebullar", name: "Lucia", source: "http://www.lyckasmedbakning.nu/bak-fikakalender-2016/" }],
-        18: [{ coffee: "Valfri kaka", name: "Kakans dag", source: "http://www.lyckasmedbakning.nu/bak-fikakalender-2016/" }],
+        18: [{ coffee: "Kakor", name: "Kakans dag", source: "http://www.lyckasmedbakning.nu/bak-fikakalender-2016/" }],
         21: [{ coffee: "Skumtomtar", name: "Skumtomtens dag" }],
     }
 };
