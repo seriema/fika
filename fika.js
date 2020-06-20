@@ -101,12 +101,19 @@ document.fika.kalender = {
     }
 };
 
-// "Fettisdagen" and "Internationella pannkaksdagen" are both on the same day, and that day varies
-document.fika.kalender[fatTuesday.getMonth()][fatTuesday.getDate()] ?
-    document.fika.kalender[fatTuesday.getMonth()][fatTuesday.getDate()].push({ coffee: "Semla", name: "Fettisdagen", source: "https://sv.wikipedia.org/wiki/Fettisdagen" }) :
-    document.fika.kalender[fatTuesday.getMonth()][fatTuesday.getDate()] = [{ coffee: "Semla", name: "Fettisdagen", source: "https://sv.wikipedia.org/wiki/Fettisdagen" }];
+// Helps support multiple fika's day, as a day without fika needs an empty array to be convenient to work with
+const getFikaDay = (month, day) => {
+    const kalender = document.fika.kalender;
+    if(!kalender[month][day]) {
+        kalender[month][day] = [];
+    }
 
-// [{ coffee: "Pannkakor", name: "Internationella pannkaksdagen" }],
+    return kalender[month][day];
+};
+
+// "Fettisdagen" and "Internationella pannkaksdagen" are both on the same day, and that day varies between Feb and Mar so it can't be in the calendar above
+getFikaDay(fatTuesday.getMonth(), fatTuesday.getDate()).push({ coffee: "Semla", name: "Fettisdagen", source: "https://sv.wikipedia.org/wiki/Fettisdagen" });
+getFikaDay(fatTuesday.getMonth(), fatTuesday.getDate()).push({ coffee: "Pannkakor", name: "Internationella pannkaksdagen", source: "https://temadagar.se/internationella-pannkaksdagen/" });
 
 //
 // Abuse hoisting so this file is easier to contribute to by keeping the calendar at the top :)
