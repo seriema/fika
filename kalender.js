@@ -14,11 +14,12 @@ Object.keys(kalender).forEach((month) => {
 
     const $month = document.createElement("ul");
     Object.keys(kalender[month]).forEach((date) => {
-        const fikaDate = kalender[month][date];
-        const fika = fikaDate[0];
-        const $date = document.createElement("li");
-        $date.innerHTML = `${date}: ${fika.coffee} (<a href="${fika.source}">${fika.name}</a>)`;
-        $month.appendChild($date);
+        kalender[month][date].forEach(fikaDate => {
+            const fika = fikaDate;
+            const $date = document.createElement("li");
+            $date.innerHTML = `${date}: ${fika.coffee} (<a href="${fika.source}">${fika.name}</a>)`;
+            $month.appendChild($date);
+        });
     });
 
     $fika.appendChild($month);
