@@ -8,7 +8,8 @@ const $fika = document.getElementById("fika-node");
 
 // Celebrate a special day
 if (fikaDate) {
-    const fika = fikaDate[0];
+    // If there are multiple fika's on this date then return a random one
+    const fika = fikaDate[Math.floor(Math.random() * fikaDate.length)];
     $fika.innerHTML = `<h3>${fika.coffee}</h3>`;
 
     // Try to get a picture of the pastry :)
