@@ -14,7 +14,7 @@ if (fikaDate) {
 
     // Try to get a picture of the pastry :)
     const imageHeight = 300;
-    const wikimediaUrl = `https://sv.wikipedia.org/w/api.php?origin=*&action=query&titles=${fika.coffee}&prop=pageimages&format=json&pithumbsize=${imageHeight}`;
+    const wikimediaUrl = `https://sv.wikipedia.org/w/api.php?origin=*&action=query&titles=${fika.coffee}&prop=pageimages&format=json&pithumbsize=${imageHeight}&redirects`;
     fetch(wikimediaUrl, { mode: 'cors' })
         .then(response => response.json())
         .then(data => {
