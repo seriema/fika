@@ -1,6 +1,5 @@
-const today = new Date();
-const month = today.getMonth();
-const date = today.getDate();
+const month = document.fika.month;
+const date = document.fika.date;
 
 const fikaDate = document.fika.kalender[month][date];
 

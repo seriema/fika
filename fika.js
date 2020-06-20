@@ -1,5 +1,7 @@
 document.fika = {};
-document.fika.year = getYear();
+document.fika.year = getQueryDate("year", "getFullYear");
+document.fika.month = getQueryDate("month", "getMonth");
+document.fika.date = getQueryDate("date", "getDate");
 const nthDay = (month, nthDay, weekday) => nthDayInMonth(nthDay, weekday, month).getDate();
 const lastWeek = (month) => mondayOfLastFullWeekInMonth(month).getDate();
 
@@ -118,14 +120,16 @@ getFikaDay(fatTuesday.getMonth(), fatTuesday.getDate()).push({ coffee: "Pannkako
 //
 // Abuse hoisting so this file is easier to contribute to by keeping the calendar at the top :)
 
-function getYear() {
+function getQueryDate(name, fallbackDateMethod) {
     if (window.location.search) {
         const searchParams = new URLSearchParams(window.location.search);
-        const yearString = searchParams.get("year");
-        return Number(yearString);
+
+        if (searchParams.has(name)) {
+            return Number(searchParams.get(name));
+        }
     }
 
-    return new Date(Date.now()).getFullYear();
+    return new Date(Date.now())[fallbackDateMethod]();
 }
 
 // Helper methods from https://www.i-programmer.info/programming/javascript/6322-date-hacks-doing-javascript-date-calculations.html?start=1

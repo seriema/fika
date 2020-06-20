@@ -17,7 +17,8 @@ Object.keys(kalender).forEach((month) => {
         kalender[month][date].forEach(fikaDate => {
             const fika = fikaDate;
             const $date = document.createElement("li");
-            $date.innerHTML = `${date}: ${fika.coffee} (<a href="${fika.source}">${fika.name}</a>)`;
+            $date.innerHTML = `<a href="index.html?year=${document.fika.year}&month=${month}&date=${date}">${date}</a>: `;
+            $date.innerHTML += `${fika.coffee} (<a href="${fika.source}">${fika.name}</a>)`;
             $month.appendChild($date);
         });
     });
